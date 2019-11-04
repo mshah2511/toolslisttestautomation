@@ -20,6 +20,7 @@ Feature: Login
     Examples:
     | username | password  |
     | tester   | letmein   |
+    | tester1  | letmein   |
     | tester2  | letmein   |
 
     @to-do
