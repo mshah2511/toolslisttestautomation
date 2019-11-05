@@ -10,7 +10,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class Driver {
     private static final String URL = System.getProperty("url", "http://toolslist.safebear.co.uk:8080");
 
-    private static final String BROWSER = System.getProperty("browser", "chrome");
+    private static final String BROWSER = System.getProperty("browser", "chrome_headless");
 
     public static String getUrl() {
         return URL;
@@ -22,16 +22,27 @@ public class Driver {
         ChromeOptions chromeOptions;
 
         switch (BROWSER.toUpperCase()) {
-            case "CHROME":
+            case "CHROME_HEADLESS":
 
                 //tell the user which browser we are running our tests on
-                System.out.println("Executing on CHROME");
+                System.out.println("Executing on CHROME HEADLESS");
+
+                chromeOptions = new ChromeOptions();
+
+                //Set chrome to run headlessly
+                chromeOptions.addArguments("headless");
+
+                //Make sure the window size is large and maximised
+                // so nothing disappears off screen
+                //(even in headless mode!)
+                chromeOptions.addArguments("window-size=1920, 1080");
+                chromeOptions.addArguments("strat-maximized");
 
                 // Use 'WebDriverManager' to setup our chromedriver
                 WebDriverManager.chromedriver().setup();
 
                 // Return our driver
-                return new ChromeDriver();
+                return new ChromeDriver(chromeOptions);
 
             case "FIREFOX":
 
