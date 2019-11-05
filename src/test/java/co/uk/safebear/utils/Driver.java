@@ -8,7 +8,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class Driver {
-    private static final String URL = System.getProperty("url", "http://toolslist.safebear.co.uk:8080");
+    private static final String URL = System.getProperty("url", "https://www.cinch.co.uk/");
 
     private static final String BROWSER = System.getProperty("browser", "chrome");
 
