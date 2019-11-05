@@ -34,4 +34,5 @@ public static WebDriver getDriver(){
             throw new IllegalArgumentException("The browser type is undefined");
     }
 }
+}
 
