@@ -22,6 +22,18 @@ public class Driver {
         ChromeOptions chromeOptions;
 
         switch (BROWSER.toUpperCase()) {
+            case "CHROME":
+
+                //tell the user which browser we are running our tests on
+                System.out.println("Executing on CHROME");
+
+                // Use 'WebDriverManager' to setup our chromedriver
+                WebDriverManager.chromedriver().setup();
+
+                // Return our driver
+                return new ChromeDriver();
+
+
             case "CHROME_HEADLESS":
 
                 //tell the user which browser we are running our tests on
