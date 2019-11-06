@@ -19,7 +19,7 @@ public class Driver {
 
     public static WebDriver getDriver() {
 
-        ChromeOptions chromeOptions;
+        ChromeOptions chromeOptions = new ChromeOptions();
 
         switch (BROWSER.toUpperCase()) {
             case "CHROME":
@@ -32,6 +32,20 @@ public class Driver {
 
                 // Return our driver
                 return new ChromeDriver();
+
+            case "HEADLESS_CHROME":
+
+                //tell the user which browser we are running our tests on
+                System.out.println("Executing on HEADLESS_CHROME");
+
+                // Use 'WebDriverManager' to setup our chromedriver
+                WebDriverManager.chromedriver().setup();
+
+                chromeOptions.setHeadless(true);
+
+                // Return our driver
+                return new ChromeDriver(chromeOptions);
+
 
             case "FIREFOX":
 
