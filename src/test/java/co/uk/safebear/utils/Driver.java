@@ -10,7 +10,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class Driver {
     private static final String URL = System.getProperty("url", "http://toolslist.safebear.co.uk:8080");
 
-    private static final String BROWSER = System.getProperty("browser", "chrome_headless");
+    private static final String BROWSER = System.getProperty("browser", "chrome");
 
     public static String getUrl() {
         return URL;
