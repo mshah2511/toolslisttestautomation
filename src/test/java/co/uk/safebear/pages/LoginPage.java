@@ -8,10 +8,10 @@ import org.openqa.selenium.WebDriver;
 @RequiredArgsConstructor
 public class LoginPage {
 
-    LoginPageLocators locators = new LoginPageLocators();
-
     @NonNull
     WebDriver driver;
+
+    LoginPageLocators locators = new LoginPageLocators();
 
    public String getPageTitle(){
 
@@ -31,6 +31,9 @@ public class LoginPage {
        driver.findElement(locators.getLoginbuttonLocator()).click();
    }
 
+   public String checkforFailedLoginWarning(){
+       return driver.findElement(locators.getFailedLoginMessage()).getText();
+   }
 
 }
 
