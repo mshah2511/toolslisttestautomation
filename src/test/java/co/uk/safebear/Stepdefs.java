@@ -28,6 +28,8 @@ public class Stepdefs {
 
         //Navigate to the URL of our webpage
         driver.get(Driver.getUrl());
+
+
     }
 
     @After
