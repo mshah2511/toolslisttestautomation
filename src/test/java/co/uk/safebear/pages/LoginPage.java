@@ -1,6 +1,7 @@
 package co.uk.safebear.pages;
 
 import co.uk.safebear.pages.locators.LoginPageLocators;
+import co.uk.safebear.utils.Waits;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.openqa.selenium.WebDriver;
@@ -20,7 +21,7 @@ public class LoginPage {
 
    public void enterUsername (String username){
 
-       driver.findElement(locators.getUsernameLocator()).sendKeys(username);
+       Waits.waitForElement(locators.getUsernameLocator(), driver).sendKeys(username);
    }
 
    public void enterPassword (String password) {
